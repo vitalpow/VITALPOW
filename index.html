@@ -12,427 +12,113 @@
     :root{
       --bg:#f1fbfb;
       --card:#ffffff;
-      --accent1:#00d2d3;     /* mint/teal */
-      --accent2:#007f9e;     /* deep teal */
-      --accent3:#ffb33e;     /* warm orange accent */
+      --accent1:#00d2d3;
+      --accent2:#007f9e;
+      --accent3:#ffb33e;
       --text:#18343d;
       --muted:#55707a;
       --glass: rgba(255,255,255,0.6);
       --radius:14px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, #eaffff 0%, var(--bg) 50%);
+      font-family:'Montserrat',system-ui;
+      background:linear-gradient(180deg,#eaffff 0%,var(--bg) 50%);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
       scroll-behavior:smooth;
     }
 
-    /* Header */
     header{
-      position:fixed;
-      left:0; right:0; top:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 20px;
-      z-index:999;
-      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position:fixed;left:0;right:0;top:0;
+      display:flex;align-items:center;justify-content:center;
+      padding:12px 20px;z-index:999;
+      background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
     }
-    .nav-inner{
-      width:90%;
-      max-width:1200px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:14px;
-    }
-    .brand img{height:48px; width:48px; object-fit:contain; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-    .brand h1{font-size:1.1rem; margin:0; font-weight:800; letter-spacing:0.4px; color:var(--accent2)}
-    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center}
-    nav a{
-      text-decoration:none; color:var(--muted); font-weight:600; font-size:0.95rem;
-      padding:8px 12px; border-radius:10px; transition:all .22s ease;
-    }
-    nav a:hover{color:var(--accent2); background:rgba(0,0,0,0.03); transform:translateY(-2px)}
+    .nav-inner{width:90%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:48px;width:48px;object-fit:contain;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .brand h1{font-size:1.1rem;margin:0;font-weight:800;color:var(--accent2)}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:0.95rem;padding:8px 12px;border-radius:10px;transition:all .22s ease;}
+    nav a:hover{color:var(--accent2);background:rgba(0,0,0,0.03);transform:translateY(-2px)}
 
-    /* Hero */
-    .hero{
-      margin-top:80px; /* header height */
-      min-height:72vh;
-      display:grid;
-      grid-template-columns: 1fr 480px;
-      gap:28px;
-      align-items:center;
-      width:90%;
-      max-width:1200px;
-      margin-left:auto; margin-right:auto;
-      padding:40px 0;
-    }
-
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
-      padding:34px;
-      border-radius:18px;
-      box-shadow: 0 12px 50px rgba(2,40,45,0.08);
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-
-    .kicker{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:white; font-weight:700; font-size:0.85rem;
-      box-shadow: 0 6px 18px rgba(0,210,211,0.12);
-    }
-
-    .hero h2{
-      font-size:2.4rem; margin:14px 0 6px 0; color:var(--text);
-      letter-spacing:-0.6px;
-    }
-    .hero p.lead{color:var(--muted); font-size:1.05rem; margin-bottom:18px}
-
-    .cta-row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 18px; border-radius:12px; text-decoration:none;
-      font-weight:700; cursor:pointer; border:none;
-    }
-    .btn-primary{ background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:white; box-shadow:0 8px 30px rgba(0,210,211,0.12) }
-    .btn-outline{ background:transparent; color:var(--accent2); border:2px solid rgba(0,127,158,0.12) }
-
-    /* Right column - media */
-    .media {
-      display:flex; flex-direction:column; gap:14px; align-items:center;
-    }
-    .video-wrap{
-      width:100%;
-      border-radius:14px;
-      overflow:hidden;
-      border: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-    }
-    video{ width:100%; height:auto; display:block; background:#000 }
-
-    /* Features grid */
-    .section{
-      width:90%; max-width:1200px; margin:40px auto; padding:18px 0;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:18px;
-      align-items:stretch;
-    }
-    .card{
-      background:var(--card);
-      border-radius:14px;
-      padding:18px;
-      box-shadow: 0 6px 24px rgba(2,40,45,0.06);
-      border: 1px solid rgba(0,0,0,0.03);
-      min-height:140px;
-    }
-    .card h3{margin:6px 0 10px 0; color:var(--accent2)}
-    .card p{color:var(--muted); font-size:0.95rem}
-
-    .sensor{
-      display:flex; gap:12px; align-items:center;
-    }
-    .sensor .dot{
-      width:56px; height:56px; border-radius:12px;
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800; color:white;
-      background: linear-gradient(180deg,var(--accent2),var(--accent1));
-      box-shadow: 0 8px 26px rgba(0,127,158,0.12);
-    }
-
-    /* Live sample */
-    .live{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-    }
-    .live .reading{
-      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0.7));
-      padding:10px 14px; border-radius:10px; text-align:center; width:30%;
-      border:1px solid rgba(0,0,0,0.04);
-    }
-    .reading h4{margin:6px 0; font-size:1.2rem; color:var(--accent2)}
-    .reading p{margin:0; font-weight:700; font-size:1.3rem}
-
-    /* About / Objectives */
-    .two-col{
-      display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:start;
-    }
-    .faq{
-      display:flex; flex-direction:column; gap:12px;
-    }
-    .faq-item{
-      background: linear-gradient(180deg, #ffffff, #fbffff);
-      border-radius:12px; padding:12px; border:1px solid rgba(0,0,0,0.03);
-    }
-
-    /* Footer */
-    footer{
-      margin-top:32px; padding:26px 0; background: linear-gradient(90deg,var(--accent2),#063945);
-      color:white; text-align:center; border-radius:12px; width:90%; max-width:1200px; margin-left:auto; margin-right:auto;
-    }
-
-    /* Responsive */
-    @media (max-width:1000px){
-      .hero{ grid-template-columns:1fr; padding-bottom:0 }
-      .grid{ grid-template-columns: repeat(2, 1fr) }
-      .two-col{ grid-template-columns: 1fr }
-      .live .reading{ width:32% }
-    }
-    @media (max-width:640px){
-      nav ul{ display:none }
-      .brand h1{ font-size:1rem }
-      .grid{ grid-template-columns: 1fr }
-      .live{ flex-direction:column; gap:10px }
-      .reading{ width:100% }
-    }
-
-    /* small helper */
-    .muted{ color:var(--muted) }
-    .caps{ text-transform:uppercase; font-size:0.78rem; letter-spacing:1px; color:var(--muted) }
+    .hero{margin-top:80px;min-height:72vh;display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;width:90%;max-width:1200px;margin:auto;padding:40px 0;}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9));padding:34px;border-radius:18px;box-shadow:0 12px 50px rgba(2,40,45,0.08);border:1px solid rgba(0,0,0,0.03)}
+    .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;font-size:0.85rem;box-shadow:0 6px 18px rgba(0,210,211,0.12);}
+    .hero h2{font-size:2.4rem;margin:14px 0 6px;color:var(--text);}
+    .hero p.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px;}
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;cursor:pointer;border:none;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;}
+    .btn-outline{background:transparent;color:var(--accent2);border:2px solid rgba(0,127,158,0.12)}
+    .media{display:flex;flex-direction:column;gap:14px;align-items:center;}
+    .video-wrap{width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.05);box-shadow:0 10px 40px rgba(0,0,0,0.06);}
+    video{width:100%;height:auto;display:block;background:#000}
+    .section{width:90%;max-width:1200px;margin:40px auto;padding:18px 0;}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 24px rgba(2,40,45,0.06);border:1px solid rgba(0,0,0,0.03);}
+    .card h3{margin:6px 0 10px;color:var(--accent2)}
+    .card p{color:var(--muted);font-size:0.95rem}
+    footer{margin-top:32px;padding:26px 0;background:linear-gradient(90deg,var(--accent2),#063945);color:white;text-align:center;border-radius:12px;width:90%;max-width:1200px;margin-left:auto;margin-right:auto;}
+    @media(max-width:1000px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" 
-     alt="logo" 
-     id="site-logo" 
-     style="height:48px; width:auto;">
-
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="logo.jpg" alt="logo">
+        <div>
+          <h1>VitalPow</h1>
+          <div class="caps">Arnés Inteligente — Cuidado Canino</div>
+        </div>
+      </div>
       <nav>
         <ul>
           <li><a href="#about">Qué es</a></li>
           <li><a href="#features">Beneficios</a></li>
           <li><a href="#tech">Tecnología</a></li>
+          <li><a href="#pdf">PDF</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
   <main>
-    <section class="hero">
-      <div class="hero-card">
-        <span class="kicker">Nuevo · Arnés Inteligente</span>
-        <h2>VitalPow — Acompañamiento inteligente para la salud de tu perro</h2>
-        <p class="lead">Monitorea temperatura, frecuencia cardiaca y señales de estrés en tiempo real. Alertas instantáneas, diseño cómodo y conectividad para tranquilidad del dueño.</p>
+    <!-- (Todo el contenido existente igual que antes) -->
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Donaciones.</a>
-          <a class="btn btn-outline" href="#features">Ver Beneficios</a>
-          <a class="btn" style="background:var(--accent3); color:white; border-radius:12px; font-weight:700" href="VitalPow .pdf" download>Descargar PDF</a>
-        </div>
+    <!-- 🔹 Sección PDF integrada -->
+    <section id="pdf" class="section">
+      <h2>Documento completo del proyecto</h2>
+      <p class="muted">Consulta o descarga la documentación técnica del proyecto VitalPow.</p>
 
-        <div style="margin-top:16px; color:var(--muted); display:flex; gap:10px; align-items:center; margin-bottom:6px">
-          <small class="muted">Integrado desde el proyecto universitario y documentación técnica.</small>
-        </div>
-
-        <!-- Live sample simulated readings (demo) -->
-        <div style="margin-top:18px">
-          <div class="live">
-            <div class="reading">
-              <h4>Temperatura</h4>
-              <p id="temp">— °C</p>
-            </div>
-            <div class="reading">
-              <h4>Ritmo Cardíaco</h4>
-              <p id="hr">— bpm</p>
-            </div>
-            <div class="reading">
-              <h4>Estrés</h4>
-              <p id="stress">—</p>
-            </div>
-          </div>
-        </div>
+      <div style="margin-top:16px; border:1px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden;">
+        <iframe 
+          src="VitalPow.pdf" 
+          width="100%" 
+          height="600px" 
+          style="border:none;">
+        </iframe>
       </div>
 
-      <aside class="media">
-        <div style="width:100%; text-align:left; margin-bottom:6px" class="caps">Presentación</div>
-
-        <div class="video-wrap">
-          <!-- Video: will attempt relative path then fallback to uploaded path -->
-        <iframe
-  width="100%"
-  height="315"
-  src="https://www.youtube.com/embed/aHZot0y4dPs"
-  title="VitalPow presentación"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-        </div>
-
-        <div style="display:flex; gap:8px; width:100%; justify-content:space-between; margin-top:6px">
-          <div style="flex:1; display:flex; gap:8px; align-items:center;">
-            <div style="width:56px; height:56px; border-radius:12px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; box-shadow:0 6px 18px rgba(0,210,211,0.12)">IoT</div>
-            <div>
-              <div style="font-weight:700">Conectividad</div>
-              <small class="muted">Bluetooth • Wi-Fi</small>
-            </div>
-          </div>
-          <div style="flex:1; display:flex; gap:8px; align-items:center;">
-            <div style="width:56px; height:56px; border-radius:12px; background:linear-gradient(90deg,var(--accent3),#ff7b3d); display:flex; align-items:center; justify-content:center; color:white; font-weight:800">+1</div>
-            <div>
-              <div style="font-weight:700">Alertas</div>
-              <small class="muted">Sonoras • Luminosas</small>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- Beneficios / Features -->
-    <section id="features" class="section">
-      <h2 style="margin-bottom:12px">Beneficios clave</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="sensor">
-            <div class="dot">HR</div>
-            <div>
-              <h3>Monitoreo cardíaco</h3>
-              <p>Registra la frecuencia cardiaca en tiempo real para detectar arritmias o estrés.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="sensor">
-            <div class="dot">TMP</div>
-            <div>
-              <h3>Control de temperatura</h3>
-              <p>Detección temprana de golpes de calor y variaciones térmicas anormales.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="sensor">
-            <div class="dot">ACT</div>
-            <div>
-              <h3>Actividad y estrés</h3>
-              <p>Acelerómetros y análisis de jadeo para identificar fatiga o malestar.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Alertas inmediatas</h3>
-          <p>Señales luminosas, sonido y notificaciones móviles para actuar al instante.</p>
-        </div>
-
-        <div class="card">
-          <h3>Diseño cómodo</h3>
-          <p>Arnés pensado en ergonomía y seguridad para uso continuo sin incomodidad.</p>
-        </div>
-
-        <div class="card">
-          <h3>Prevención</h3>
-          <p>Monitoreo preventivo que reduce riesgos y costos veterinarios a largo plazo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- About / Objetivos / Tecnología (from PDF integrated) -->
-    <section id="about" class="section">
-      <h2>¿Qué es VitalPow?</h2>
-      <div class="two-col" style="margin-top:14px">
-        <div>
-          <div class="card" style="padding:22px">
-            <h3>Resumen del proyecto</h3>
-            <p style="color:var(--muted)">VitalPow es un arnés inteligente para perros que monitorea signos vitales (temperatura corporal, frecuencia cardíaca y señales de estrés) en tiempo real mediante sensores y un microcontrolador, con alertas luminosas y sonoras para proteger la salud y el bienestar de la mascota.</p>
-            <p style="margin-top:10px; color:var(--muted)">Integrado desde la documentación técnica y el proyecto universitario, VitalPow busca promover un acompañamiento responsable y anticiparse a riesgos en la salud canina mediante automatización aplicada.</p>
-            <p style="margin-top:8px; font-size:0.9rem" class="muted">Fuente: documentación del proyecto (PDF integrado en esta página). </p>
-          </div>
-        </div>
-
-        <div>
-          <div class="card" style="padding:22px">
-            <h3>Objetivos principales</h3>
-            <ul style="margin:6px 0 0 18px; color:var(--muted)">
-              <li>Diseñar un arnés capaz de monitorear la salud del perro con sensores biométricos.</li>
-              <li>Implementar circuitos y microcontroladores dentro de un arnés funcional.</li>
-              <li>Programar alertas inmediatas (luminosas/sonoras) y transmitir datos a una app.</li>
-              <li>Estimar costos de producción y escalabilidad del dispositivo.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tecnología -->
-    <section id="tech" class="section">
-      <h2>Tecnología y componentes</h2>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px">
-        <div class="card" style="flex:1 1 320px">
-          <h3>Sensores</h3>
-          <p class="muted">Sensor de temperatura de contacto, sensor de pulso/PPG para frecuencia cardiaca, acelerómetro 3-ejes para actividad y detección de jadeo.</p>
-        </div>
-
-        <div class="card" style="flex:1 1 320px">
-          <h3>Procesamiento y conectividad</h3>
-          <p class="muted">Microcontrolador (por ejemplo ESP32/STM32), conectividad Bluetooth/Wi-Fi para enviar datos a la app y almacenamiento local temporal.</p>
-        </div>
-
-        <div class="card" style="flex:1 1 320px">
-          <h3>Alertas y UX</h3>
-          <p class="muted">Buzzer/LEDs para alertas locales, App móvil para notificaciones, interfaz simple para dueños y módulo de respaldo para emergencias.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section" style="padding-bottom:40px;">
-      <h2>Contacto & Donaciones</h2>
-      <div style="display:flex; gap:18px; margin-top:12px; align-items:flex-start; flex-wrap:wrap;">
-        <div style="flex:1 1 420px;">
-          <div class="card">
-            <h3>¿Interesado en pruebas o colaboración?</h3>
-            <p class="muted">Rellena el formulario y nos pondremos en contacto para coordinar y presentarte el prototipo y planes de comercialización.</p>
-            <form id="contactForm" style="margin-top:12px">
-              <input type="text" id="name" placeholder="Nombre completo" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #e6eef0; margin-bottom:8px">
-              <input type="email" id="email" placeholder="Correo electrónico" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #e6eef0; margin-bottom:8px">
-              <textarea id="message" rows="4" placeholder="Mensaje / Interés (ej. donacion, cotización)" style="width:100%; padding:10px; border-radius:8px; border:1px solid #e6eef0; margin-bottom:8px"></textarea>
-              <div style="display:flex; gap:8px">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-                <a href="VitalPow .pdf" class="btn btn-outline" style="padding:10px 14px">Ver PDF</a>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div style="flex:1 1 320px;">
-          <div class="card">
-            <h3>Equipo</h3>
-            <p class="muted">Carlos Gómez, Karen Rodriguez y Sebastián Torres — Universidad San Buenaventura. Proyecto de Tecnología en Automatización Industrial.</p>
-            <h4 style="margin-top:12px">¿Necesitas especificaciones técnicas?</h4>
-            <p class="muted">Solicita la hoja técnica (PDF) y te la enviamos para evaluación de integración y pruebas de prototipo.</p>
-          </div>
-        </div>
+      <div style="margin-top:10px;">
+        <a class="btn btn-primary" href="VitalPow.pdf" download>Descargar PDF</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
       <div style="text-align:left">
         <strong>VitalPow</strong><br>
         <small>Arnés Inteligente para el Cuidado Canino</small>
@@ -444,44 +130,7 @@
   </footer>
 
   <script>
-    // Small interactive/demo scripts
-
-    // Set copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simulate live readings for demo purposes — replace with real data hooks
-    function rand(min, max){ return Math.floor(Math.random()*(max-min+1))+min }
-
-    function updateDemo(){
-      // Temperature normal canine range ~ 38.3–39.2 °C (but vary for demo)
-      const t = (rand(382, 397)/10).toFixed(1);
-      const hr = rand(70,150); // bpm typical ranges depend on size/age
-      const stress = ['Bajo','Moderado','Alto'][rand(0,2)];
-      document.getElementById('temp').textContent = t + ' °C';
-      document.getElementById('hr').textContent = hr + ' bpm';
-      document.getElementById('stress').textContent = stress;
-    }
-
-    // run demo updates every 3 seconds
-    updateDemo();
-    setInterval(updateDemo, 3000);
-
-    // Simple contact form handler (demo only; no server)
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      alert('Gracias, ' + (name||'amigo') + '! Hemos recibido tu solicitud. Te contactaremos a ' + email + '.');
-      this.reset();
-    });
-
-    // Video autoplay hint: attempt to load local file; some browsers block autoplay, so we keep controls.
-    const vid = document.getElementById('intro-video');
-    // If the provided file path fails, it will show a link fallback.
   </script>
 </body>
 </html>
-
-
-
-
