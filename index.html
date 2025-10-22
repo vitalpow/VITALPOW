@@ -40,24 +40,23 @@
     }
     .nav-inner{width:90%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:48px;width:48px;object-fit:contain;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-    .brand h1{font-size:1.1rem;margin:0;font-weight:800;color:var(--accent2)}
+    .brand img{
+      height:52px;
+      width:52px;
+      border-radius:10px;
+      object-fit:cover;
+      box-shadow:0 6px 12px rgba(0,0,0,0.1);
+      transition:transform .3s ease;
+    }
+    .brand img:hover{transform:scale(1.05)}
+    .brand h1{font-size:1.2rem;margin:0;font-weight:800;color:var(--accent2)}
     nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
     nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:0.95rem;padding:8px 12px;border-radius:10px;transition:all .22s ease;}
     nav a:hover{color:var(--accent2);background:rgba(0,0,0,0.03);transform:translateY(-2px)}
-
-    .hero{margin-top:80px;min-height:72vh;display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;width:90%;max-width:1200px;margin:auto;padding:40px 0;}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9));padding:34px;border-radius:18px;box-shadow:0 12px 50px rgba(2,40,45,0.08);border:1px solid rgba(0,0,0,0.03)}
-    .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;font-size:0.85rem;}
-    .hero h2{font-size:2.4rem;margin:14px 0 6px;color:var(--text);}
-    .hero p.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px;}
-    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;cursor:pointer;border:none;}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;}
-    .btn-outline{background:transparent;color:var(--accent2);border:2px solid rgba(0,127,158,0.12)}
-    .video-wrap{width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.05);box-shadow:0 10px 40px rgba(0,0,0,0.06);}
+    .section{width:90%;max-width:1200px;margin:100px auto 40px;padding:18px 0;}
     iframe{width:100%;border:none;}
-    .section{width:90%;max-width:1200px;margin:40px auto;padding:18px 0;}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;}
     footer{margin-top:32px;padding:26px 0;background:linear-gradient(90deg,var(--accent2),#063945);color:white;text-align:center;border-radius:12px;width:90%;max-width:1200px;margin-left:auto;margin-right:auto;}
   </style>
 </head>
@@ -67,8 +66,9 @@
   <header>
     <div class="nav-inner">
       <div class="brand">
-        <!-- Si tu logo no se llama logo.jpg, cámbialo aquí -->
-        <img src="logo.jpg" alt="logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
+        <!-- 👇 Aquí tu logo local con respaldo automático -->
+        <img src="logo.jpg" alt="logo VitalPow"
+             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';">
         <div>
           <h1>VitalPow</h1>
           <div class="caps">Arnés Inteligente — Cuidado Canino</div>
@@ -78,52 +78,59 @@
         <ul>
           <li><a href="#resumen">Resumen</a></li>
           <li><a href="#video">Video</a></li>
+          <li><a href="#imagen">Imagen</a></li>
           <li><a href="#pdf">Documento</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main style="margin-top:100px;">
+  <main>
 
     <section id="resumen" class="section">
       <h2>Resumen</h2>
       <p>
-        El proyecto VitalPow consiste en crear un arnés inteligente para perros que permita el monitoreo en tiempo real
-        de comportamientos y signos vitales como temperatura corporal, frecuencia cardiaca y posibles signos de estrés.
-        Este sistema utiliza sensores conectados a un microcontrolador que procesa la información para enviar alertas
-        visuales o sonoras. Su objetivo es mejorar el bienestar y salud de las mascotas, anticipando riesgos y promoviendo
-        una tenencia responsable.
+        VitalPow es un arnés inteligente para perros que permite monitorear en tiempo real
+        la temperatura corporal, frecuencia cardiaca y signos de estrés mediante sensores
+        conectados a un microcontrolador. El sistema genera alertas visuales y sonoras
+        para promover el bienestar de las mascotas y facilitar una atención preventiva
+        por parte de sus dueños.
       </p>
     </section>
 
     <section id="video" class="section">
       <h2>Presentación del Proyecto</h2>
-      <div class="video-wrap">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.15);">
         <iframe src="https://www.youtube.com/embed/aHZot0y4dPs" 
-                title="VitalPow Speech"
-                allowfullscreen></iframe>
+                title="VitalPow Speech" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="imagen" class="section">
+      <h2>Imagen del Proyecto</h2>
+      <div style="display:flex;justify-content:center;margin-top:12px;">
+        <img src="https://drive.google.com/uc?export=view&id=1-4m6qSvh0PDxww1GqrQoe4Ff9CiDkwzE"
+             alt="Imagen del proyecto VitalPow"
+             style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.15);">
       </div>
     </section>
 
     <section id="pdf" class="section">
-      <h2>Documento completo</h2>
-      <p>Puedes visualizar directamente el documento técnico o descargarlo.</p>
+      <h2>Documento técnico completo</h2>
+      <p>Consulta o descarga la documentación completa del proyecto VitalPow.</p>
 
-      <!-- 🔹 Método 1: incrustar PDF directamente (si está en la misma carpeta) -->
-      <iframe src="DocumentoVitalP.pdf" width="100%" height="600px" style="border:none;"></iframe>
+      <!-- 📘 Asegúrate que el PDF esté en la misma carpeta y sin espacios -->
+      <iframe src="DocumentoVitalP.pdf" height="600px"></iframe>
 
-
-      <!-- 🔹 Método 2: enlace de respaldo -->
       <div style="margin-top:10px;">
-        <a class="btn btn-primary" href="Documento%20VitalP.pdf" download>Descargar PDF</a>
+        <a class="btn btn-primary" href="DocumentoVitalP.pdf" download>Descargar PDF</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <small>© <span id="year"></span> VitalPow · Universidad San Buenaventura</small>
+    <small>© <span id="year"></span> VitalPow · Proyecto universitario</small>
   </footer>
 
   <script>
@@ -131,4 +138,3 @@
   </script>
 </body>
 </html>
-
