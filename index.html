@@ -17,55 +17,48 @@
       --accent3:#ffb33e;
       --text:#18343d;
       --muted:#55707a;
-      --glass: rgba(255,255,255,0.6);
       --radius:14px;
     }
-    *{box-sizing:border-box;}
-    html, body{height:100%;}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:'Montserrat',system-ui;
-      background: linear-gradient(180deg,#eaffff 0%, var(--bg) 50%);
-      color: var(--text);
+      background:linear-gradient(180deg,#eaffff 0%,var(--bg) 50%);
+      color:var(--text);
       line-height:1.5;
       scroll-behavior:smooth;
     }
+
     header{
-      position:fixed; left:0; right:0; top:0;
-      display:flex; align-items:center; justify-content:center;
-      padding:12px 20px; z-index:999;
-      background: linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+      position:fixed;left:0;right:0;top:0;
+      display:flex;align-items:center;justify-content:center;
+      padding:12px 20px;z-index:999;
+      background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
       backdrop-filter:blur(6px);
       border-bottom:1px solid rgba(0,0,0,0.06);
     }
-    .nav-inner{width:90%; max-width:1200px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
-    .brand{display:flex; align-items:center; gap:14px;}
-    .brand img{height:48px; width:48px; object-fit:contain; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08);}
-    .brand h1{font-size:1.1rem; margin:0; font-weight:800; color:var(--accent2);}
-    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center;}
-    nav a{text-decoration:none; color:var(--muted); font-weight:600; font-size:0.95rem; padding:8px 12px; border-radius:10px; transition:all .22s ease;}
-    nav a:hover{color:var(--accent2); background:rgba(0,0,0,0.03); transform:translateY(-2px);}
+    .nav-inner{width:90%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:48px;width:48px;object-fit:contain;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .brand h1{font-size:1.1rem;margin:0;font-weight:800;color:var(--accent2)}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:0.95rem;padding:8px 12px;border-radius:10px;transition:all .22s ease;}
+    nav a:hover{color:var(--accent2);background:rgba(0,0,0,0.03);transform:translateY(-2px)}
 
-    .hero{margin-top:80px; min-height:72vh; display:grid; grid-template-columns:1fr 480px; gap:28px; align-items:center; width:90%; max-width:1200px; margin:auto; padding:40px 0;}
-    .hero‐card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9)); padding:34px; border-radius:18px; box-shadow:0 12px 50px rgba(2,40,45,0.08); border:1px solid rgba(0,0,0,0.03);}
-    .kicker{display:inline-block; padding:8px 12px; border-radius:999px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:white; font-weight:700; font-size:0.85rem; box-shadow:0 6px 18px rgba(0,210,211,0.12);}
-    .hero h2{font-size:2.4rem; margin:14px 0 6px; color:var(--text);}
-    .hero p.lead{color:var(--muted); font-size:1.05rem; margin-bottom:18px;}
-    .cta-row{display:flex; gap:12px; align-items:center; flex-wrap:wrap;}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; cursor:pointer; border:none;}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:white;}
-    .btn-outline{background:transparent; color:var(--accent2); border:2px solid rgba(0,127,158,0.12);}
-    .media{display:flex; flex-direction:column; gap:14px; align-items:center;}
-    .video-wrap{width:100%; border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,0.05); box-shadow:0 10px 40px rgba(0,0,0,0.06);}
-    video, iframe{width:100%; height:auto; display:block; background:#000;}
-    .section{width:90%; max-width:1200px; margin:40px auto; padding:18px 0;}
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; align-items:stretch;}
-    .card{background:var(--card); border-radius:14px; padding:18px; box-shadow:0 6px 24px rgba(2,40,45,0.06); border:1px solid rgba(0,0,0,0.03);}
-    .card h3{margin:6px 0 10px; color:var(--accent2);}
-    .card p{color:var(--muted); font-size:0.95rem;}
-    footer{margin-top:32px; padding:26px 0; background:linear-gradient(90deg,var(--accent2),#063945); color:white; text-align:center; border-radius:12px; width:90%; max-width:1200px; margin-left:auto; margin-right:auto;}
-    @media(max-width:1000px){.hero{grid-template-columns:1fr;} .grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+    .hero{margin-top:80px;min-height:72vh;display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;width:90%;max-width:1200px;margin:auto;padding:40px 0;}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9));padding:34px;border-radius:18px;box-shadow:0 12px 50px rgba(2,40,45,0.08);border:1px solid rgba(0,0,0,0.03)}
+    .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;font-size:0.85rem;}
+    .hero h2{font-size:2.4rem;margin:14px 0 6px;color:var(--text);}
+    .hero p.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px;}
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;cursor:pointer;border:none;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;}
+    .btn-outline{background:transparent;color:var(--accent2);border:2px solid rgba(0,127,158,0.12)}
+    .video-wrap{width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.05);box-shadow:0 10px 40px rgba(0,0,0,0.06);}
+    iframe{width:100%;border:none;}
+    .section{width:90%;max-width:1200px;margin:40px auto;padding:18px 0;}
+    footer{margin-top:32px;padding:26px 0;background:linear-gradient(90deg,var(--accent2),#063945);color:white;text-align:center;border-radius:12px;width:90%;max-width:1200px;margin-left:auto;margin-right:auto;}
   </style>
 </head>
 
@@ -74,7 +67,8 @@
   <header>
     <div class="nav-inner">
       <div class="brand">
-        <img src="logo.jpg" alt="logo">
+        <!-- Si tu logo no se llama logo.jpg, cámbialo aquí -->
+        <img src="logo.jpg" alt="logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
         <div>
           <h1>VitalPow</h1>
           <div class="caps">Arnés Inteligente — Cuidado Canino</div>
@@ -82,100 +76,57 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#hero">Inicio</a></li>
           <li><a href="#resumen">Resumen</a></li>
-          <li><a href="#descripcion">Descripción</a></li>
           <li><a href="#video">Video</a></li>
-          <li><a href="#imagen">Imagen</a></li>
           <li><a href="#pdf">Documento</a></li>
-          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main style="margin-top:100px;">
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div>
-        <span class="kicker">Innovación Canina</span>
-        <h2>VitalPow: Arnés Inteligente para Perros</h2>
-        <p class="lead">Diseñado para mejorar el bienestar, seguridad y conectividad de tu mejor amigo.</p>
-        <div class="cta-row">
-          <a href="#video" class="btn btn-primary">Ver Vídeo</a>
-          <a href="#pdf" class="btn btn-outline">Descargar Documento</a>
-        </div>
-      </div>
-      <div class="hero‐card">
-        <img src="https://drive.google.com/uc?export=view&id=1-4m6qSvh0PDxww1GqrQoe4Ff9CiDkwzE" alt="Concepto VitalPow" style="width:100%; border-radius:14px;">
-      </div>
-    </section>
-
-    <!-- Resumen -->
     <section id="resumen" class="section">
       <h2>Resumen</h2>
-      <p class="muted">
-        <!-- Aquí pegas el texto del resumen extraído del documento PDF -->
-        The VitalPow project consists of creating a smart harness for dogs that allows real-time monitoring of internal behaviors and vital signs such as body temperature, heart rate, and possible signs of stress. This harness integrates electronic sensors connected to a microcontroller that processes the information to send alert signals, either through lights or sounds. The main goal of this project is to ensure the monitored well-being and health of pets, providing peace of mind and better care for their owners. It aims to promote responsible pet ownership and anticipate health risks through an applied automation system. VitalPow is expected to become an innovative proposal in the field of animal health and, through its commercialization, reach all pet owners who prioritize their pets’ well-being, encouraging the use of these technologies as tools for prevention, care, and animal welfare.
+      <p>
+        El proyecto VitalPow consiste en crear un arnés inteligente para perros que permita el monitoreo en tiempo real
+        de comportamientos y signos vitales como temperatura corporal, frecuencia cardiaca y posibles signos de estrés.
+        Este sistema utiliza sensores conectados a un microcontrolador que procesa la información para enviar alertas
+        visuales o sonoras. Su objetivo es mejorar el bienestar y salud de las mascotas, anticipando riesgos y promoviendo
+        una tenencia responsable.
       </p>
     </section>
 
-    <!-- Descripción del Proyecto -->
-    <section id="descripcion" class="section">
-      <h2>Descripción del Proyecto</h2>
-      <p class="muted">
-        <!-- Extrae del documento: Justificación, Objetivos, Metodología, Resultados esperados… -->
-        [Inserta aquí la información adicional del documento para ofrecer contexto completo…]
-      </p>
-    </section>
-
-    <!-- Vídeo del Speech -->
     <section id="video" class="section">
-      <h2>Presentación en Vídeo</h2>
-      <p class="muted">Mira la presentación completa del proyecto VitalPow.</p>
+      <h2>Presentación del Proyecto</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/aHZot0y4dPs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/aHZot0y4dPs" 
+                title="VitalPow Speech"
+                allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- Imagen Conceptual -->
-    <section id="imagen" class="section">
-      <h2>Imagen del Proyecto</h2>
-      <p class="muted">Visualiza el diseño conceptual del arnés inteligente VitalPow.</p>
-      <div style="margin-top:16px; display:flex; justify-content:center;">
-        <img src="https://drive.google.com/uc?export=view&id=1-4m6qSvh0PDxww1GqrQoe4Ff9CiDkwzE" alt="Imagen del proyecto VitalPow" style="max-width:100%; border-radius:14px; box-shadow:0 8px 28px rgba(0,0,0,0.15);">
-      </div>
-    </section>
-
-    <!-- Documento PDF -->
     <section id="pdf" class="section">
-      <h2>Documento técnico completo</h2>
-      <p class="muted">Consulta o descarga la documentación del proyecto VitalPow.</p>
-      <div style="margin-top:16px; border:1px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden;">
-        <iframe src="VitalPow.pdf" width="100%" height="600px" style="border:none;"></iframe>
-      </div>
+      <h2>Documento completo</h2>
+      <p>Puedes visualizar directamente el documento técnico o descargarlo.</p>
+
+      <!-- 🔹 Método 1: incrustar PDF directamente (si está en la misma carpeta) -->
+      <iframe src="Documento%20VitalP.pdf" width="100%" height="600px"></iframe>
+
+      <!-- 🔹 Método 2: enlace de respaldo -->
       <div style="margin-top:10px;">
-        <a class="btn btn-primary" href="VitalPow.pdf" download>Descargar PDF</a>
+        <a class="btn btn-primary" href="Documento%20VitalP.pdf" download>Descargar PDF</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
-      <div style="text-align:left">
-        <strong>VitalPow</strong><br>
-        <small>Arnés Inteligente para el Cuidado Canino</small>
-      </div>
-      <div style="text-align:right">
-        <small>© <span id="year"></span> VitalPow · Proyecto universitario</small>
-      </div>
-    </div>
+    <small>© <span id="year"></span> VitalPow · Universidad San Buenaventura</small>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
