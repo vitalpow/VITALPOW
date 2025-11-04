@@ -1,0 +1,161 @@
+# 🐾 Proyecto VitalPow - Simulador de salud canina
+
+import random
+import time
+
+# ----- FUNCIONES -----
+def medir_temperatura(edad):
+    if edad == "1":  # cachorro
+        return round(random.uniform(37.0, 40.5), 1)
+    elif edad == "2":  # adulto
+        return round(random.uniform(37.0, 40.0), 1)
+    else:  # senior
+        return round(random.uniform(36.8, 39.8), 1)
+
+def medir_ritmo(edad, tamano):
+    if edad == "1":
+        return random.randint(90, 210)
+    elif edad == "2":
+        if tamano == "1":
+            return random.randint(70, 160)
+        elif tamano == "2":
+            return random.randint(65, 140)
+        else:
+            return random.randint(55, 120)
+    else:
+        return random.randint(60, 140)
+
+def analizar_temperatura(temp, edad):
+    if edad == "1":
+        if temp < 37.8:
+            return "BAJA"
+        elif temp <= 39.5:
+            return "NORMAL"
+        elif temp <= 40.0:
+            return "ALTA"
+        else:
+            return "MUY ALTA"
+    elif edad == "2":
+        if temp < 37.5:
+            return "BAJA"
+        elif temp <= 39.2:
+            return "NORMAL"
+        elif temp <= 39.8:
+            return "ALTA"
+        else:
+            return "MUY ALTA"
+    else:
+        if temp < 37.2:
+            return "BAJA"
+        elif temp <= 39.0:
+            return "NORMAL"
+        elif temp <= 39.6:
+            return "ALTA"
+        else:
+            return "MUY ALTA"
+
+def analizar_ritmo(ritmo, edad, tamano):
+    if edad == "1":
+        if ritmo < 100:
+            return "BAJO"
+        elif ritmo <= 180:
+            return "NORMAL"
+        elif ritmo <= 200:
+            return "ALTO"
+        else:
+            return "MUY ALTO"
+    elif edad == "2":
+        if tamano == "1":
+            if ritmo < 80:
+                return "BAJO"
+            elif ritmo <= 140:
+                return "NORMAL"
+            elif ritmo <= 160:
+                return "ALTO"
+            else:
+                return "MUY ALTO"
+        elif tamano == "2":
+            if ritmo < 70:
+                return "BAJO"
+            elif ritmo <= 120:
+                return "NORMAL"
+            elif ritmo <= 140:
+                return "ALTO"
+            else:
+                return "MUY ALTO"
+        else:
+            if ritmo < 60:
+                return "BAJO"
+            elif ritmo <= 100:
+                return "NORMAL"
+            elif ritmo <= 120:
+                return "ALTO"
+            else:
+                return "MUY ALTO"
+    else:
+        if ritmo < 60:
+            return "BAJO"
+        elif ritmo <= 120:
+            return "NORMAL"
+        elif ritmo <= 140:
+            return "ALTO"
+        else:
+            return "MUY ALTO"
+
+def calcular_estres(temp_estado, ritmo_estado):
+    if temp_estado == "BAJA" and ritmo_estado == "BAJO":
+        return 9, "🔴 CRÍTICO. Lleva a tu mascota al veterinario de inmediato."
+    elif temp_estado == "NORMAL" and ritmo_estado == "NORMAL":
+        return 1, "🟢 ESTADO GENERAL: SALUDABLE. Todo está en orden."
+    elif temp_estado in ["ALTA", "MUY ALTA"] and ritmo_estado in ["ALTO", "MUY ALTO"]:
+        return 4, "🟡 ESTADO GENERAL: OBSERVACIÓN. Mantente atento, dale descanso y agua."
+    else:
+        return 6, "🟠 ESTADO GENERAL: ALERTA. Podría estar estresado, revisa su entorno."
+
+# ----- PROGRAMA PRINCIPAL -----
+while True:
+    print("\n🐶 Bienvenido al simulador VitalPow 🩺")
+    inicio = input("¿Quieres saber el estado de salud de tu perro? (si/no): ").lower()
+    if inicio != "si":
+        print("Gracias por usar VitalPow ❤️")
+        break
+
+    print("\nSeleccione el rango de edad de su perro:")
+    print("1) Cachorro (0 a 1 año)")
+    print("2) Adulto (1 a 7 años)")
+    print("3) Senior (mayor a 7 años)")
+    edad = input("Ingrese una opción (1-3): ")
+
+    print("\nSeleccione el tamaño de su perro:")
+    print("1) Pequeño")
+    print("2) Mediano")
+    print("3) Grande")
+    tamano = input("Ingrese una opción (1-3): ")
+
+    print("\n🌡 Midiendo temperatura corporal...")
+    time.sleep(3)
+    temp = medir_temperatura(edad)
+    print("Temperatura detectada:", temp, "°C")
+
+    print("\n💓 Midiendo ritmo cardíaco...")
+    time.sleep(3)
+    ritmo = medir_ritmo(edad, tamano)
+    print("Ritmo cardíaco detectado:", ritmo, "lpm")
+
+    print("\n🔍 Analizando los datos...")
+    time.sleep(3)
+
+    temp_estado = analizar_temperatura(temp, edad)
+    ritmo_estado = analizar_ritmo(ritmo, edad, tamano)
+    nivel, mensaje = calcular_estres(temp_estado, ritmo_estado)
+
+    print("\n--- RESULTADO FINAL ---")
+    print(f"Temperatura: {temp} °C -> {temp_estado}")
+    print(f"Ritmo cardíaco: {ritmo} lpm -> {ritmo_estado}")
+    print(f"Nivel de estrés estimado: {nivel} /10\n")
+    print(mensaje)
+
+    repetir = input("\n¿Deseas volver a medir los signos vitales? (si/no): ").lower()
+    if repetir != "si":
+        print("Gracias por usar VitalPow 🐾")
+        break
