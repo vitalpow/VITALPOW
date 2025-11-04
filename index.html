@@ -132,7 +132,7 @@
       <!-- 🔹 Nuevo apartado TXT -->
     <section id="txt" class="section">
       <h2>Archivo de texto del proyecto</h2>
-      <p class="muted">Visualiza aquí el archivo de texto adjunto (por ejemplo, notas, especificaciones o bitácora).</p>
+      <p class="muted">Visualiza aquí el archivo de Pyton.</p>
 
       <div class="card" style="margin-top:16px;">
         <pre id="txtViewer">Cargando contenido del archivo...</pre>
@@ -152,10 +152,22 @@
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Cargar contenido del TXT
+    fetch('# 🐾 Proyecto VitalPow - Simulador.txt')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('txtViewer').textContent = text;
+      })
+      .catch(() => {
+        document.getElementById('txtViewer').textContent = "No se pudo cargar el archivo TXT. Asegúrate de que 'notas.txt' esté en la misma carpeta.";
+      });
   </script>
 </body>
 </html>
+
 
 
 
